@@ -1,9 +1,19 @@
-long power(long num, long deg) {
-    long result = 1;
+double my_pow(double num, int deg) {
+    double result = 1;
 
-    for(long i = 0; i < deg; i++) {
-        result *= num;
+    if(deg < 0) {
+        deg = -deg;
+        for(long i = 0; i < deg; i++) {
+            result *= num;
+        }
+
+        return 1 / result;
     }
+    else {
+        for (long i = 0; i < deg; i++) {
+            result *= num;
+        }
 
-    return result;
+        return result;
+    }
 }
